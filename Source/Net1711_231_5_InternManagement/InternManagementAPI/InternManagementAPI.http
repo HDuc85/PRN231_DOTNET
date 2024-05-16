@@ -1,0 +1,6 @@
+@InternManagementAPI_HostAddress = http://localhost:5194
+
+GET {{InternManagementAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

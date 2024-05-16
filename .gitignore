@@ -1,0 +1,12 @@
+
+DB/Net1711_231_5_InternManagement.mdf
+DB/Net1711_231_5_InternManagement_log.ldf
+/Source/Net1711_231_5_InternManagement/InternManagementAPI/bin
+/Source/Net1711_231_5_InternManagement/InternManagementAPI/obj
+/Source/Net1711_231_5_InternManagement/InternManagementBusiness/obj
+/Source/Net1711_231_5_InternManagement/InternManagementBusiness/bin
+/Source/Net1711_231_5_InternManagement/InternManagementData/bin
+/Source/Net1711_231_5_InternManagement/InternManagementData/obj
+/Source/Net1711_231_5_InternManagement/InternManagementWebApp/bin
+/Source/Net1711_231_5_InternManagement/InternManagementWebApp/obj
+/Source/Net1711_231_5_InternManagement/.vs
