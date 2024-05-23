@@ -6,21 +6,21 @@
         public string? Message { get; set; }
         public object? Data { get; set; }
     }
-    public class InternResult :IInternManagementResult
+    public class BaseResult :IInternManagementResult
     {
         public int Status { get; set; }
         public string? Message { get; set; }
         public object? Data { get; set; }
-        public InternResult() {
+        public BaseResult() {
             Status = -1;
             Message = "Action fall";
         }
-        public InternResult(int status, string message)
+        public BaseResult(int status, string message)
         {
             Status = status;
             Message = message;
         }
-        public InternResult(int status, string message, object data)
+        public BaseResult(int status, string message, object data)
         {
             Status = status;
             Message = message;

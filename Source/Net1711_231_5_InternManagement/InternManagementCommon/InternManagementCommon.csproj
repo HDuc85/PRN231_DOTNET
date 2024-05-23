@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\InternManagementCommon\InternManagementCommon.csproj" />
-    <ProjectReference Include="..\InternManagementData\InternManagementData.csproj" />
-  </ItemGroup>
-
 </Project>
