@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using InternManagementData.Models;
+using Task = System.Threading.Tasks.Task;
 
 namespace InternManagementData.Base
 {
@@ -12,6 +13,12 @@ namespace InternManagementData.Base
         {
             _context = new Net17112315InternManagementContext();
             _dbSet = _context.Set<T>();
+        }
+
+        public GenericRepository(Net17112315InternManagementContext context)
+        {
+            _context = context;
+            _dbSet = context.Set<T>();
         }
 
         public List<T> GetAll()
@@ -41,7 +48,7 @@ namespace InternManagementData.Base
             _context.SaveChanges();
         }
 
-        public async void UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
             var tracker = _context.Attach(entity);
             tracker.State = EntityState.Modified;
@@ -80,6 +87,32 @@ namespace InternManagementData.Base
         public async Task<T> GetByIdAsync(string code)
         {
             return await _dbSet.FindAsync(code);
+        }
+
+        public void PrepareCreate(T entity)
+        {
+            _dbSet.Add(entity);
+        }
+
+        public void PrepareUpdate(T entity)
+        {
+            var tracker = _context.Attach(entity);
+            tracker.State = EntityState.Modified;
+        }
+
+        public void PrepareRemove(T entity)
+        {
+            _dbSet.Remove(entity);
+        }
+
+        public int Save()
+        {
+            return _context.SaveChanges();
+        }
+
+        public async Task<int> SaveAsync()
+        {
+            return await _context.SaveChangesAsync();
         }
     }
 }

@@ -38,7 +38,38 @@ namespace InternManagementWebAPI.Controllers
             }
             else { return NotFound(result.Message); }
         }
-
-
+        [HttpPost]
+        [Route("Create")]
+        public async Task<IActionResult> Create(InternProfile profile)
+        {
+            var result = await _internBusiness.Create(profile);
+            if (result.Status > 0)
+            {
+                return Ok(result.Data as InternProfile);
+            } 
+            else {  return NotFound(result.Message); }
+        }
+        [HttpPost]
+        [Route("Update")]
+        public async Task<IActionResult> Update(InternProfile profile)
+        {
+            var result = await _internBusiness.Update(profile);
+            if (result.Status > 0)
+            {
+                return Ok(result.Data as InternProfile);
+            }
+            else { return NotFound(result.Message); }
+        }
+        [HttpPost]
+        [Route("Remove")]
+        public async Task<IActionResult> Remove(InternProfile profile)
+        {
+            var result = await _internBusiness.Remove(profile);
+            if (result.Status > 0)
+            {
+                return Ok(result.Data as InternProfile);
+            }
+            else { return NotFound(result.Message); }
+        }
     }
 }
