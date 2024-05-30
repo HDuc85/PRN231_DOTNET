@@ -38,5 +38,40 @@ namespace InternManagementWebApp.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        
+        [HttpGet]
+        public IActionResult Create()
+        {
+            try
+            {
+                return PartialView("_add", new InternProfile());
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpDelete]
+        public async Task<List<InternProfile>?> Remove(int id)
+        {
+            try
+            {
+                List<InternProfile>? result = null;
+                using (var httpClient = new HttpClient())
+                {
+                    using (var response = await httpClient.DeleteAsync(apiUrl + "Create" + id))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var data = await response.Content.ReadAsStringAsync();
+                            result = JsonConvert.DeserializeObject<List<InternProfile>>(data);
+                        }
+                    }
+                }
+                return result;
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
