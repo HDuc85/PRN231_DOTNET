@@ -15,6 +15,8 @@ public partial class MentorProfile
 
     public string? MentorEmail { get; set; }
 
+    public string? Password { get; set; }
+
     public virtual ICollection<InternProfile> InternProfiles { get; set; } = new List<InternProfile>();
 
     public virtual ICollection<MentorIntern> MentorInterns { get; set; } = new List<MentorIntern>();

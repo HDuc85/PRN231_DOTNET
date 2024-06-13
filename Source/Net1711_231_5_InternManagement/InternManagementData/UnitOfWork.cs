@@ -8,6 +8,7 @@ namespace InternManagementData
     {
         private Net17112315InternManagementContext _unitOfWorkContext;
         private InternRepository _intern;
+        private MentorRepository _mentor;
 
         public UnitOfWork()
         {
@@ -18,6 +19,13 @@ namespace InternManagementData
             get
             {
                 return _intern ??= new InternRepository();
+            }
+        }
+        public MentorRepository MentorRepository
+        {
+            get
+            {
+                return _mentor ??= new     MentorRepository();
             }
         }
 

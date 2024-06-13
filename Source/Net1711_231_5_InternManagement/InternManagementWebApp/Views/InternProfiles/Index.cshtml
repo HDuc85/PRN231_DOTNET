@@ -69,18 +69,50 @@
 
             $("#btSave").click(function () {
                 var formData = new FormData();
-                formData.append("ID", $("#ID").val());
-                formData.append("TypeCode", $("#TypeCode").val());
-                formData.append("AmountGross", $("#AmountGross").val());
-                formData.append("CurrencyCode", $("#CurrencyCode").val());
-                formData.append("Description", $("#Description").val());
-                formData.append("IsIncluded", $("#IsIncluded").val());
+                    formData.append("InternID", $("#InternID").val());
+
+                    formData.append("InternName", $("#InternName").val());
+                    formData.append("InternAddress", $("#InternAddress").val());
+                    formData.append("InternEmail", $("#InternEmail").val());
+                    formData.append("InternPhone", $("#InternPhone").val());
+                    formData.append("University", $("#University").val());
+                    formData.append("Major", $("#Major").val());
+                  
+
 
                 console.log(formData);
+                var type = $('#Type').val();
+
+                    if (type == "edit") {
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '@Url.Action("Edit", "InternProfiles")',
+                            //contentType: 'application/json;charset=utf-8',
+                            //dataType: "json",
+                            processData: false,
+                            contentType: false,
+                            data: formData,
+                            success: function (result) {
+                                //console.log(result);
+
+                                if (result.status >= 1) {
+                                    $('#internModal').modal('hide');
+                                    loadData();
+                                }
+                                // alert(result.message);
+                            },
+                            error: function (xhr, error) {
+                                //alert(xhr.responseText);
+                                console.log(xhr);
+                            }
+                        });
+                }
+
 
                 $.ajax({
                     type: 'POST',
-                    url: '@Url.Action("Save", "Home")',
+                    url: '@Url.Action("Save", "InternProfiles")',
                     //contentType: 'application/json;charset=utf-8',
                     //dataType: "json",
                     processData: false,
@@ -90,10 +122,10 @@
                         //console.log(result);
 
                         if (result.status >= 1) {
-                            $('#topUpModal').modal('hide');
+                                $('#internModal').modal('hide');
                             loadData();
                         }
-                        alert(result.message);
+                       // alert(result.message);
                     },
                     error: function (xhr, error) {
                         //alert(xhr.responseText);
@@ -124,7 +156,8 @@
                         html += '<td class="text-end">' + item.university + '</td>';
                         html += '<td class="text-end">' + item.major + '</td>';
                         html += '<td class="text-end">' + item.mentorId + '</td>';
-                        html += '<td><a href="#" onclick="return edit(\'' + item.id + '\')">Edit</a> | <a href="#" onclick="delele(\'' + item.id + '\')">Delete</a></td>';
+                        html += '<td><a href="#" onclick="edit(\'' + item.internId + '\')">Edit</a> | <a href="#" onclick="delele(\'' + item.internId + '\')">Delete</a></td>';
+
                         html += '</tr>';
                     });
                     $('.tblInterns').html(html);
@@ -151,31 +184,50 @@
                 }
             });
         }
-
         function edit(id) {
-            $("#topUpModalContent").html("");
-            $("#topUpModalLabel").html("Update");
-
-            var formData = new FormData();
-            formData.append("id", id);
+            $("#internModalContent").html("");
+            $("#internModalLabel").html("Edit Intern Profile");
 
             $.ajax({
-                url: '@Url.Action("Edit", "Home")',
-                type: "POST",
-                //contentType: 'application/json;charset=utf-8',
-                //dataType: "json",
-                processData: false,
-                contentType: false,
-                data: formData,
+                url: '@Url.Action("Edit", "InternProfiles")',
+                type: "GET",
+                data: { id: id },
                 success: function (result) {
-                    $("#topUpModalContent").html(result);
-                    $('#topUpModal').modal('show');
+                    $("#internModalContent").html(result);
+                    $('#internModal').modal('show');
                 },
                 error: function (message) {
-                    alert(message);
+                    alert("An error occurred: " + message.responseText);
                 }
             });
         }
+/*
+         function edit(id) {
+                    $("#internModalContent").html("");
+                    $("#internModal").html("Add New");
+
+                    var formData = new FormData();
+                    formData.append("id", id);
+
+                    $.ajax({
+                        url: '@Url.Action("Edit", "InternProfiles")',
+                        type: "POST",
+                        //contentType: 'application/json;charset=utf-8',
+                        //dataType: "json",
+                        processData: false,
+                        contentType: false,
+                        data: formData,
+                        success: function (result) {
+                            $("#topUpModalContent").html(result);
+                            $('#topUpModal').modal('show');
+                        },
+                        error: function (message) {
+                            alert(message);
+                        }
+                    });
+                }
+*/
+       
 
         function delele(id) {
             var result = confirm("Are you sure to delete?");
@@ -185,7 +237,7 @@
                 formData.append("id", id);
 
                 $.ajax({
-                    url: '@Url.Action("Delete", "Home")',
+                    url: '@Url.Action("Delete", "InternProfiles")',
                     type: "POST",
                     //contentType: 'application/json;charset=utf-8',
                     //dataType: "json",

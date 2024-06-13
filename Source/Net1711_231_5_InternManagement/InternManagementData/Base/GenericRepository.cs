@@ -109,7 +109,10 @@ namespace InternManagementData.Base
         {
             return _context.SaveChanges();
         }
-
+        public IQueryable<T> Get()
+        {
+            return this._dbSet.AsQueryable();
+        }
         public async Task<int> SaveAsync()
         {
             return await _context.SaveChangesAsync();

@@ -100,6 +100,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.InternEmail)
                 .HasMaxLength(320)
                 .IsUnicode(false);
+            entity.Property(e => e.Password).HasColumnName("Password");
             entity.Property(e => e.InternName).HasMaxLength(100);
             entity.Property(e => e.InternPhone)
                 .HasMaxLength(10)
@@ -143,6 +144,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.MentorId)
                 .ValueGeneratedNever()
                 .HasColumnName("MentorID");
+            entity.Property(e => e.Password).HasColumnName("Password"); 
             entity.Property(e => e.MentorAddress).HasMaxLength(255);
             entity.Property(e => e.MentorEmail)
                 .HasMaxLength(320)

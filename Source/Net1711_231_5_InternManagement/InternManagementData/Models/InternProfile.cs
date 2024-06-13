@@ -20,6 +20,7 @@ public partial class InternProfile
     public string? Major { get; set; }
 
     public int? MentorId { get; set; }
+    public string? Password { get; set; }
 
     public virtual MentorProfile? Mentor { get; set; }
 

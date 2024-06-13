@@ -1,5 +1,7 @@
 ﻿using InternManagementBusiness.Category;
+using InternManagementData.DTO;
 using InternManagementData.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternManagementWebAPI.Controllers
@@ -17,6 +19,7 @@ namespace InternManagementWebAPI.Controllers
 
         [HttpGet]
         [Route("GetAll")]
+        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             var result = await _internBusiness.GetAll();
@@ -40,8 +43,18 @@ namespace InternManagementWebAPI.Controllers
         }
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> Create(InternProfile profile)
+        public async Task<IActionResult> Create(InternProfileDTO profileDTO)
         {
+            var profile = new InternProfile
+            {
+                InternId = profileDTO.InternID,
+                InternName = profileDTO.InternName,
+                InternAddress = profileDTO.InternAddress,
+                InternEmail = profileDTO.InternEmail,
+                InternPhone = profileDTO.InternPhone,
+                University = profileDTO.University,
+                Major = profileDTO.Major
+            };
             var result = await _internBusiness.Create(profile);
             if (result.Status > 0)
             {
@@ -51,8 +64,21 @@ namespace InternManagementWebAPI.Controllers
         }
         [HttpPost]
         [Route("Update")]
-        public async Task<IActionResult> Update(InternProfile profile)
+        public async Task<IActionResult> Update(InternProfileDTO profileDTO)
         {
+
+
+            var profile = new InternProfile
+            {
+                InternId = profileDTO.InternID,
+                InternName = profileDTO.InternName,
+                InternAddress = profileDTO.InternAddress,
+                InternEmail = profileDTO.InternEmail,
+                InternPhone = profileDTO.InternPhone,
+                University = profileDTO.University,
+                Major = profileDTO.Major
+            };
+
             var result = await _internBusiness.Update(profile);
             if (result.Status > 0)
             {
