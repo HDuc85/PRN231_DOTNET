@@ -62,7 +62,7 @@ namespace InternManagementWebAPI.Controllers
             } 
             else {  return NotFound(result.Message); }
         }
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> Update(InternProfileDTO profileDTO)
         {
@@ -86,11 +86,13 @@ namespace InternManagementWebAPI.Controllers
             }
             else { return NotFound(result.Message); }
         }
-        [HttpPost]
+        [HttpDelete]
         [Route("Remove")]
-        public async Task<IActionResult> Remove(InternProfile profile)
+        public async Task<IActionResult> Remove(int profileid)
         {
-            var result = await _internBusiness.Remove(profile);
+            var profile = await _internBusiness.GetById(profileid);
+            InternProfile internProfile = profile.Data as InternProfile;
+            var result = await _internBusiness.Remove(internProfile);
             if (result.Status > 0)
             {
                 return Ok(result.Data as InternProfile);

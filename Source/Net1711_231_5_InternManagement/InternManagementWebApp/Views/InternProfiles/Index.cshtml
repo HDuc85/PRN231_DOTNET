@@ -238,21 +238,19 @@
 
                 $.ajax({
                     url: '@Url.Action("Delete", "InternProfiles")',
-                    type: "POST",
+                    type: "DELETE",
                     //contentType: 'application/json;charset=utf-8',
                     //dataType: "json",
                     processData: false,
                     contentType: false,
                     data: formData,
                     success: function (result) {
-                        if (result.status >= 1) {
-                            $('#topUpModal').modal('hide');
-                            loadData();
-                        }
-                        alert(result.message);
+                       
+                        alert(result);
+                        loadData();
                     },
-                    error: function (message) {
-                        alert(message);
+                    error: function (result) {
+                        alert(result);
                     }
                 });
             }

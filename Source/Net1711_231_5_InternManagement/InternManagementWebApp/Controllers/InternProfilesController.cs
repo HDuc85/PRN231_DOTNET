@@ -6,6 +6,8 @@ using InternManagementData.DTO;
 using System.ComponentModel;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Net.Http;
+using NuGet.Common;
+using System.Net.Http.Headers;
 
 namespace InternManagementWebApp.Controllers
 {
@@ -28,6 +30,9 @@ namespace InternManagementWebApp.Controllers
                 var result = new List<InternProfile>();
                 using (var httpClient = new HttpClient())
                 {
+                    string token = HttpContext.Session.GetString("accessToken");
+                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
                     using (var response = await httpClient.GetAsync(apiUrl + "GetAll"))
                     {
                         if (response.IsSuccessStatusCode)
@@ -155,7 +160,7 @@ namespace InternManagementWebApp.Controllers
                 var result = new List<InternProfile>();
                 using (var httpClient = new HttpClient())
                 {
-                    using (var response = await httpClient.PostAsync(apiUrl + "Update", content))
+                    using (var response = await httpClient.PutAsync(apiUrl + "Update", content))
                     {
                         if (response.IsSuccessStatusCode)
                         {
@@ -173,20 +178,24 @@ namespace InternManagementWebApp.Controllers
             }
         }
         [HttpDelete]
-        public async Task<List<InternProfile>?> Remove(int id)
+        public async Task<string> Delete(int id)
         {
             try
             {
-                List<InternProfile>? result = null;
+                string? result = null;
                 using (var httpClient = new HttpClient())
                 {
-                    using (var response = await httpClient.DeleteAsync(apiUrl + "Create" + id))
+                    using (var response = await httpClient.DeleteAsync(apiUrl + "Remove?profileid=" + id))
                     {
                         if (response.IsSuccessStatusCode)
                         {
-                            var data = await response.Content.ReadAsStringAsync();
-                            result = JsonConvert.DeserializeObject<List<InternProfile>>(data);
+
+                            result = "Delete Successful";
+                        }else
+                        {
+                            result = "Can not Delete";
                         }
+                        
                     }
                 }
                 return result;
