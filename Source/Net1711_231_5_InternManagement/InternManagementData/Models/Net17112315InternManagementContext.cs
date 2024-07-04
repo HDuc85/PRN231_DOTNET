@@ -70,7 +70,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("Employee");
 
             entity.Property(e => e.EmployeeId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("EmployeeID");
             entity.Property(e => e.CompanyId).HasColumnName("CompanyID");
             entity.Property(e => e.EmployeeAddress).HasMaxLength(255);
@@ -94,7 +94,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("InternProfile");
 
             entity.Property(e => e.InternId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("InternID");
             entity.Property(e => e.InternAddress).HasMaxLength(255);
             entity.Property(e => e.InternEmail)
@@ -121,7 +121,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("MentorIntern");
 
             entity.Property(e => e.MentorInternId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("MentorInternID");
             entity.Property(e => e.InternId).HasColumnName("InternID");
             entity.Property(e => e.MentorId).HasColumnName("MentorID");
@@ -142,7 +142,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("MentorProfile");
 
             entity.Property(e => e.MentorId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("MentorID");
             entity.Property(e => e.Password).HasColumnName("Password"); 
             entity.Property(e => e.MentorAddress).HasMaxLength(255);
@@ -162,7 +162,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("ProgramIntern");
 
             entity.Property(e => e.ProgramInternId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("ProgramInternID");
             entity.Property(e => e.InternId).HasColumnName("InternID");
             entity.Property(e => e.ProgramId).HasColumnName("ProgramID");
@@ -183,7 +183,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("ProgramTask");
 
             entity.Property(e => e.ProgramTaskId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("ProgramTaskID");
             entity.Property(e => e.ProgramId).HasColumnName("ProgramID");
             entity.Property(e => e.TaskId).HasColumnName("TaskID");
@@ -204,7 +204,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("Status");
 
             entity.Property(e => e.StatusId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("StatusID");
             entity.Property(e => e.StatusName).HasMaxLength(1);
         });
@@ -216,7 +216,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("Task");
 
             entity.Property(e => e.TaskId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("TaskID");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
@@ -236,7 +236,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("TaskManage");
 
             entity.Property(e => e.TaskManageId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("TaskManageID");
             entity.Property(e => e.InternId).HasColumnName("InternID");
             entity.Property(e => e.MentorId).HasColumnName("MentorID");
@@ -267,7 +267,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.ToTable("TrainingProgram");
 
             entity.Property(e => e.ProgramId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("ProgramID");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.ProgramDecription).HasColumnType("ntext");

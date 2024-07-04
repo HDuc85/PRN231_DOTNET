@@ -43,17 +43,16 @@ namespace InternManagementWebAPI.Controllers
         }
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> Create(InternProfileDTO profileDTO)
+        public async Task<IActionResult> Create(InternProfileRequest request)
         {
             var profile = new InternProfile
             {
-                InternId = profileDTO.InternID,
-                InternName = profileDTO.InternName,
-                InternAddress = profileDTO.InternAddress,
-                InternEmail = profileDTO.InternEmail,
-                InternPhone = profileDTO.InternPhone,
-                University = profileDTO.University,
-                Major = profileDTO.Major
+                InternName = request.InternName,
+                InternAddress = request.InternAddress,
+                InternEmail = request.InternEmail,
+                InternPhone = request.InternPhone,
+                University = request.University,
+                Major = request.Major
             };
             var result = await _internBusiness.Create(profile);
             if (result.Status > 0)
