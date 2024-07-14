@@ -2,7 +2,6 @@
 using InternManagementCommon;
 using InternManagementData.DTO;
 using Microsoft.AspNetCore.Http;
-using System.Security.AccessControl;
 using DataObject = Google.Apis.Storage.v1.Data;
 namespace InternManagementBusiness.Category
 {

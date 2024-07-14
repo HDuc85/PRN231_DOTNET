@@ -4,6 +4,7 @@ using InternManagementData.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InternManagementData.Migrations
 {
     [DbContext(typeof(Net17112315InternManagementContext))]
-    partial class Net17112315InternManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20240714155214_Add_Jobboard_Certificate_Table")]
+    partial class Add_Jobboard_Certificate_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

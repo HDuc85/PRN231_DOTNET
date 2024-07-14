@@ -9,6 +9,8 @@ namespace InternManagementData
         private Net17112315InternManagementContext _unitOfWorkContext;
         private InternRepository _intern;
         private MentorRepository _mentor;
+        private JobboardProfileRepository _jobboardProfile;
+        private CertificateRepository _certificate;
 
         public UnitOfWork()
         {
@@ -26,6 +28,20 @@ namespace InternManagementData
             get
             {
                 return _mentor ??= new     MentorRepository();
+            }
+        }
+        public JobboardProfileRepository JobboardProfileRepository
+        {
+            get
+            {
+                return _jobboardProfile ??= new JobboardProfileRepository();
+            }
+        }
+        public CertificateRepository CertificateRepository
+        {
+            get
+            {
+                return _certificate ??= new CertificateRepository();
             }
         }
 

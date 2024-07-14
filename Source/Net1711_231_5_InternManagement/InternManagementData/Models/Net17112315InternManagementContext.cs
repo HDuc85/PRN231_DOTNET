@@ -275,6 +275,9 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.StartDate).HasColumnType("datetime");
         });
 
+        modelBuilder.Entity<JobboardProfile>();
+        modelBuilder.Entity<Certificate>();
+
         OnModelCreatingPartial(modelBuilder);
     }
 
