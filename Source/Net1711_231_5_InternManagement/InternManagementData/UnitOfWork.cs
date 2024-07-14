@@ -9,7 +9,7 @@ namespace InternManagementData
         private Net17112315InternManagementContext _unitOfWorkContext;
         private InternRepository _intern;
         private MentorRepository _mentor;
-
+        private TaskRepository _taskRepository;
         public UnitOfWork()
         {
         }
@@ -19,6 +19,13 @@ namespace InternManagementData
             get
             {
                 return _intern ??= new InternRepository();
+            }
+        }
+        public TaskRepository TaskRepository
+        {
+            get
+            {
+                return _taskRepository ??= new TaskRepository();
             }
         }
         public MentorRepository MentorRepository

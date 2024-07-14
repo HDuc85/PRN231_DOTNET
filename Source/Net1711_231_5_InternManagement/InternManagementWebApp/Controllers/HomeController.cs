@@ -55,7 +55,18 @@ namespace InternManagementWebApp.Controllers
         }
         public IActionResult Index()
         {
+            string token = HttpContext.Session.GetString("accessToken");
+            if (token != null)
+            {
+                return RedirectToAction("index", "InternProfiles");
+            }
             return View();
+        }
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("accessToken");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

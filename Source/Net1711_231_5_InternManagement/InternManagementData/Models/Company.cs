@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternManagementData.Models;
 
 public partial class Company
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int CompanyId { get; set; }
 
     public string? CompanyName { get; set; }

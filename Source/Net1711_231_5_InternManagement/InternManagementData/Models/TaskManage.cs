@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternManagementData.Models;
 
 public partial class TaskManage
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int TaskManageId { get; set; }
 
     public int? TaskId { get; set; }

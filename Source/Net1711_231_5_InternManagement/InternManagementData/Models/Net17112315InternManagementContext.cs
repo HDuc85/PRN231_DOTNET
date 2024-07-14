@@ -39,13 +39,13 @@ public partial class Net17112315InternManagementContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=Net1711_231_5_InternManagement;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=.;uid=sa;pwd=12345;database=Net1711_231_5_InternManagement;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Company>(entity =>
         {
-            entity.HasKey(e => e.CompanyId).HasName("PK__Company__2D971C4C946A4B9B");
+            entity.HasKey(e => e.CompanyId).HasName("PK__Company__2D971C4C9831F889");
 
             entity.ToTable("Company");
 
@@ -65,12 +65,12 @@ public partial class Net17112315InternManagementContext : DbContext
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasKey(e => e.EmployeeId).HasName("PK__Employee__7AD04FF17D952C50");
+            entity.HasKey(e => e.EmployeeId).HasName("PK__Employee__7AD04FF17F5AAD36");
 
             entity.ToTable("Employee");
 
             entity.Property(e => e.EmployeeId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("EmployeeID");
             entity.Property(e => e.CompanyId).HasColumnName("CompanyID");
             entity.Property(e => e.EmployeeAddress).HasMaxLength(255);
@@ -89,24 +89,24 @@ public partial class Net17112315InternManagementContext : DbContext
 
         modelBuilder.Entity<InternProfile>(entity =>
         {
-            entity.HasKey(e => e.InternId).HasName("PK__InternPr__6910ED829DD0E6AF");
+            entity.HasKey(e => e.InternId).HasName("PK__InternPr__6910ED828C126731");
 
             entity.ToTable("InternProfile");
 
             entity.Property(e => e.InternId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("InternID");
             entity.Property(e => e.InternAddress).HasMaxLength(255);
             entity.Property(e => e.InternEmail)
                 .HasMaxLength(320)
                 .IsUnicode(false);
-            entity.Property(e => e.Password).HasColumnName("Password");
             entity.Property(e => e.InternName).HasMaxLength(100);
             entity.Property(e => e.InternPhone)
                 .HasMaxLength(10)
                 .IsUnicode(false);
             entity.Property(e => e.Major).HasMaxLength(50);
             entity.Property(e => e.MentorId).HasColumnName("MentorID");
+            entity.Property(e => e.Password).HasMaxLength(50);
             entity.Property(e => e.University).HasMaxLength(50);
 
             entity.HasOne(d => d.Mentor).WithMany(p => p.InternProfiles)
@@ -116,12 +116,12 @@ public partial class Net17112315InternManagementContext : DbContext
 
         modelBuilder.Entity<MentorIntern>(entity =>
         {
-            entity.HasKey(e => e.MentorInternId).HasName("PK__MentorIn__2217D7BF4265B011");
+            entity.HasKey(e => e.MentorInternId).HasName("PK__MentorIn__2217D7BF74365BBB");
 
             entity.ToTable("MentorIntern");
 
             entity.Property(e => e.MentorInternId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("MentorInternID");
             entity.Property(e => e.InternId).HasColumnName("InternID");
             entity.Property(e => e.MentorId).HasColumnName("MentorID");
@@ -137,14 +137,13 @@ public partial class Net17112315InternManagementContext : DbContext
 
         modelBuilder.Entity<MentorProfile>(entity =>
         {
-            entity.HasKey(e => e.MentorId).HasName("PK__MentorPr__053B7E7816101203");
+            entity.HasKey(e => e.MentorId).HasName("PK__MentorPr__053B7E78E0CF6563");
 
             entity.ToTable("MentorProfile");
 
             entity.Property(e => e.MentorId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("MentorID");
-            entity.Property(e => e.Password).HasColumnName("Password"); 
             entity.Property(e => e.MentorAddress).HasMaxLength(255);
             entity.Property(e => e.MentorEmail)
                 .HasMaxLength(320)
@@ -153,16 +152,17 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.MentorPhone)
                 .HasMaxLength(10)
                 .IsUnicode(false);
+            entity.Property(e => e.Password).HasMaxLength(50);
         });
 
         modelBuilder.Entity<ProgramIntern>(entity =>
         {
-            entity.HasKey(e => e.ProgramInternId).HasName("PK__ProgramI__44F12DE373C7B9C6");
+            entity.HasKey(e => e.ProgramInternId).HasName("PK__ProgramI__44F12DE3C36A4FFA");
 
             entity.ToTable("ProgramIntern");
 
             entity.Property(e => e.ProgramInternId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("ProgramInternID");
             entity.Property(e => e.InternId).HasColumnName("InternID");
             entity.Property(e => e.ProgramId).HasColumnName("ProgramID");
@@ -178,45 +178,45 @@ public partial class Net17112315InternManagementContext : DbContext
 
         modelBuilder.Entity<ProgramTask>(entity =>
         {
-            entity.HasKey(e => e.ProgramTaskId).HasName("PK__ProgramT__8B64F485E20E21BB");
+            entity.HasKey(e => e.ProgramTaskId).HasName("PK__ProgramT__8B64F4851D3399A6");
 
             entity.ToTable("ProgramTask");
 
             entity.Property(e => e.ProgramTaskId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("ProgramTaskID");
             entity.Property(e => e.ProgramId).HasColumnName("ProgramID");
             entity.Property(e => e.TaskId).HasColumnName("TaskID");
 
             entity.HasOne(d => d.Program).WithMany(p => p.ProgramTasks)
                 .HasForeignKey(d => d.ProgramId)
-                .HasConstraintName("FK__ProgramTa__Progr__5070F446");
+                .HasConstraintName("FK__ProgramTa__Progr__6754599E");
 
             entity.HasOne(d => d.Task).WithMany(p => p.ProgramTasks)
                 .HasForeignKey(d => d.TaskId)
-                .HasConstraintName("FK__ProgramTa__TaskI__5165187F");
+                .HasConstraintName("FK__ProgramTa__TaskI__68487DD7");
         });
 
         modelBuilder.Entity<Status>(entity =>
         {
-            entity.HasKey(e => e.StatusId).HasName("PK__Status__C8EE20436BC997AD");
+            entity.HasKey(e => e.StatusId).HasName("PK__Status__C8EE2043BA5A4C55");
 
             entity.ToTable("Status");
 
             entity.Property(e => e.StatusId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("StatusID");
             entity.Property(e => e.StatusName).HasMaxLength(1);
         });
 
         modelBuilder.Entity<Task>(entity =>
         {
-            entity.HasKey(e => e.TaskId).HasName("PK__Task__7C6949D162EF0762");
+            entity.HasKey(e => e.TaskId).HasName("PK__Task__7C6949D1F02C41EA");
 
             entity.ToTable("Task");
 
             entity.Property(e => e.TaskId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("TaskID");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
@@ -224,19 +224,25 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.TaskDecription).HasColumnType("ntext");
             entity.Property(e => e.TaskName).HasMaxLength(100);
 
-            entity.HasOne(d => d.Status).WithMany(p => p.Tasks)
+        entity.Property(e => e.Priority ).HasColumnName("Priority");
+            entity.Property(e => e.TaskCategory ).HasColumnName("TaskCategory");
+            entity.Property(e => e.Comments ).HasColumnName("Comments");
+            entity.Property(e => e.DateCreated ).HasColumnName("DateCreated");
+            entity.Property(e => e.LastUpdated).HasColumnName("LastUpdated");
+
+    entity.HasOne(d => d.Status).WithMany(p => p.Tasks)
                 .HasForeignKey(d => d.StatusId)
                 .HasConstraintName("FK__Task__StatusID__52593CB8");
         });
 
         modelBuilder.Entity<TaskManage>(entity =>
         {
-            entity.HasKey(e => e.TaskManageId).HasName("PK__TaskMana__8AFA651A1B0DD46F");
+            entity.HasKey(e => e.TaskManageId).HasName("PK__TaskMana__8AFA651A35F4E3AB");
 
             entity.ToTable("TaskManage");
 
             entity.Property(e => e.TaskManageId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("TaskManageID");
             entity.Property(e => e.InternId).HasColumnName("InternID");
             entity.Property(e => e.MentorId).HasColumnName("MentorID");
@@ -245,7 +251,7 @@ public partial class Net17112315InternManagementContext : DbContext
 
             entity.HasOne(d => d.Intern).WithMany(p => p.TaskManages)
                 .HasForeignKey(d => d.InternId)
-                .HasConstraintName("FK__TaskManag__Inter__534D60F1");
+                .HasConstraintName("FK__TaskManag__Inter__6A30C649");
 
             entity.HasOne(d => d.Mentor).WithMany(p => p.TaskManages)
                 .HasForeignKey(d => d.MentorId)
@@ -257,17 +263,17 @@ public partial class Net17112315InternManagementContext : DbContext
 
             entity.HasOne(d => d.Task).WithMany(p => p.TaskManages)
                 .HasForeignKey(d => d.TaskId)
-                .HasConstraintName("FK__TaskManag__TaskI__5629CD9C");
+                .HasConstraintName("FK__TaskManag__TaskI__6D0D32F4");
         });
 
         modelBuilder.Entity<TrainingProgram>(entity =>
         {
-            entity.HasKey(e => e.ProgramId).HasName("PK__Training__752560382C59AD08");
+            entity.HasKey(e => e.ProgramId).HasName("PK__Training__75256038768A047C");
 
             entity.ToTable("TrainingProgram");
 
             entity.Property(e => e.ProgramId)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("ProgramID");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.ProgramDecription).HasColumnType("ntext");

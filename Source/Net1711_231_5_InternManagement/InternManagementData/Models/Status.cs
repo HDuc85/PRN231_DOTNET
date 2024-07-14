@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternManagementData.Models;
 
 public partial class Status
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int StatusId { get; set; }
 
     public string? StatusName { get; set; }

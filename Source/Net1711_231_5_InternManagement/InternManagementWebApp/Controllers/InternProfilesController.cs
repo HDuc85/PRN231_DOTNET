@@ -19,6 +19,11 @@ namespace InternManagementWebApp.Controllers
         }
         public IActionResult index()
         {
+            string token = HttpContext.Session.GetString("accessToken");
+            if(token == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 

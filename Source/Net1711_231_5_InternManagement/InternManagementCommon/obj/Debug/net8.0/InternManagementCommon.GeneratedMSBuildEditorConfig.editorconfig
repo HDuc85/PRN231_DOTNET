@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InternManagementCommon
-build_property.ProjectDir = D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\
+build_property.ProjectDir = D:\Project\Code\FU\PRN231\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
