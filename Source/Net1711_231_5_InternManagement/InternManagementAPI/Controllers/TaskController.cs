@@ -48,7 +48,7 @@ namespace InternManagementWebAPI.Controllers
             m.Task task = new m.Task
             {
                 TaskName = request.TaskName,
-                TaskDecription = request.TaskDecription,
+                TaskDescription = request.TaskDecription,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
                 StatusId = request.StatusId,
@@ -62,15 +62,18 @@ namespace InternManagementWebAPI.Controllers
         }
         [HttpPut]
         [Route("Update")]
-        public async Task<IActionResult> Update(TaskRequest request)
+        public async Task<IActionResult> Update(TaskDTO request)
         {
             m.Task profile = new m.Task
             {
+                TaskId = request.TaskId,
                 TaskName = request.TaskName,
-                TaskDecription = request.TaskDecription,
+                TaskDescription = request.TaskDescription,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
                 StatusId = request.StatusId,
+                ProgramTasks = request.ProgramTasks,
+                TaskManages = request.TaskManages,
             };
 
             var result = await _taskBusiness.Update(profile);

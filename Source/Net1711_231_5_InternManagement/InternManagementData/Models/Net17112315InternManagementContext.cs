@@ -221,7 +221,7 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
             entity.Property(e => e.StatusId).HasColumnName("StatusID");
-            entity.Property(e => e.TaskDecription).HasColumnType("ntext");
+            entity.Property(e => e.TaskDescription).HasColumnType("ntext");
             entity.Property(e => e.TaskName).HasMaxLength(100);
 
             entity.HasOne(d => d.Status).WithMany(p => p.Tasks)
