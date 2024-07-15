@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+using InternManagementData.Models;
 using InternManagementData.Repository;
 using InternManagementData.Repository.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+=======
+using InternManagementData.Repository;
+using InternManagementData.Repository.Interface;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -28,10 +36,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
         };
     });
+<<<<<<< HEAD
+builder.Services.AddDbContext<Net17112315InternManagementContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IInternRepository, InternRepository>();
+=======
 
 builder.Services.AddScoped<IInternRepository, InternRepository>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
 builder.Services.AddSwaggerGen(option =>
 {
     option.DescribeAllParametersInCamelCase();

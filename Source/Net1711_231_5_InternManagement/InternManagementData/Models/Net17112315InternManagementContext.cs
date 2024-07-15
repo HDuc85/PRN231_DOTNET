@@ -144,7 +144,10 @@ public partial class Net17112315InternManagementContext : DbContext
             entity.Property(e => e.MentorId)
                 .ValueGeneratedOnAdd()
                 .HasColumnName("MentorID");
+<<<<<<< HEAD
+=======
             entity.Property(e => e.Password).HasColumnName("Password"); 
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
             entity.Property(e => e.MentorAddress).HasMaxLength(255);
             entity.Property(e => e.MentorEmail)
                 .HasMaxLength(320)

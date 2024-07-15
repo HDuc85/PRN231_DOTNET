@@ -22,6 +22,20 @@ D:\Project\Code\FU\PRN231\PRN231_K16231InternManagement\Source\Net1711_231_5_Int
 D:\Project\Code\FU\PRN231\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\refint\InternManagementCommon.dll
 D:\Project\Code\FU\PRN231\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.pdb
 D:\Project\Code\FU\PRN231\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\ref\InternManagementCommon.dll
+<<<<<<< HEAD
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\bin\Debug\net8.0\InternManagementCommon.deps.json
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\bin\Debug\net8.0\InternManagementCommon.dll
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\bin\Debug\net8.0\InternManagementCommon.pdb
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.AssemblyInfoInputs.cache
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.AssemblyInfo.cs
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.csproj.CoreCompileInputs.cache
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.sourcelink.json
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.dll
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\refint\InternManagementCommon.dll
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.pdb
+D:\PRN231\Project\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\ref\InternManagementCommon.dll
+=======
 D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\bin\Debug\net8.0\InternManagementCommon.deps.json
 D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\bin\Debug\net8.0\InternManagementCommon.dll
 D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\bin\Debug\net8.0\InternManagementCommon.pdb
@@ -34,3 +48,4 @@ D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternMan
 D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\refint\InternManagementCommon.dll
 D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\InternManagementCommon.pdb
 D:\PRN231_K16231InternManagement\Source\Net1711_231_5_InternManagement\InternManagementCommon\obj\Debug\net8.0\ref\InternManagementCommon.dll
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa

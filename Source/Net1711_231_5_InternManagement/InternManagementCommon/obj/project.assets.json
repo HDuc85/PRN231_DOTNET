@@ -8,11 +8,30 @@
     "net8.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
     "C:\\Users\\nguyen.quang.huy\\.nuget\\packages\\": {}
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\PRN231\\Project\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
+      "projectName": "InternManagementCommon",
+      "projectPath": "D:\\PRN231\\Project\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\PRN231\\Project\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
       "projectUniqueName": "D:\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
       "projectName": "InternManagementCommon",
       "projectPath": "D:\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
@@ -21,6 +40,7 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nguyen.quang.huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -67,7 +87,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
       }
     }
   }

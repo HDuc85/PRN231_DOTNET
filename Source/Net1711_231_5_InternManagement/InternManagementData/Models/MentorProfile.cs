@@ -16,6 +16,15 @@ public partial class MentorProfile
     public string? MentorPhone { get; set; }
 
     public string? MentorEmail { get; set; }
+<<<<<<< HEAD
+    public string? Password { get; set; }
+
+    public virtual ICollection<InternProfile>? InternProfiles { get; set; } = new List<InternProfile>();
+
+    public virtual ICollection<MentorIntern>? MentorInterns { get; set; } = new List<MentorIntern>();
+
+    public virtual ICollection<TaskManage>? TaskManages { get; set; } = new List<TaskManage>();
+=======
 
     public string? Password { get; set; }
 
@@ -24,4 +33,5 @@ public partial class MentorProfile
     public virtual ICollection<MentorIntern> MentorInterns { get; set; } = new List<MentorIntern>();
 
     public virtual ICollection<TaskManage> TaskManages { get; set; } = new List<TaskManage>();
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
 }

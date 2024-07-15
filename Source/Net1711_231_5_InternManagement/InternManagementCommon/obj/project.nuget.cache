@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "aga0ZDi/XKI=",
+  "success": true,
+  "projectFilePath": "D:\\PRN231\\Project\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
+=======
   "dgSpecHash": "rfGi2Mmy0Fg=",
   "success": true,
   "projectFilePath": "D:\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
+>>>>>>> 0f76685bb13278b4ca612a3b2abd16e6aca92ffa
   "expectedPackageFiles": [],
   "logs": []
 }
