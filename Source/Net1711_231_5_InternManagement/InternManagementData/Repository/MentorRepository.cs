@@ -3,9 +3,9 @@ using InternManagementData.Models;
 
 namespace InternManagementData.Repository
 {
-  public class InternRepository : GenericRepository<InternProfile>
+  public class MentorRepository : GenericRepository<MentorProfile>
   {
-    public InternRepository()
+    public MentorRepository()
     {
 
     }

@@ -49,7 +49,7 @@ namespace InternManagementWebAPI.Controllers
             } 
             else {  return NotFound(result.Message); }
         }
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> Update(InternProfile profile)
         {
@@ -60,7 +60,7 @@ namespace InternManagementWebAPI.Controllers
             }
             else { return NotFound(result.Message); }
         }
-        [HttpPost]
+        [HttpDelete]
         [Route("Remove")]
         public async Task<IActionResult> Remove(InternProfile profile)
         {
