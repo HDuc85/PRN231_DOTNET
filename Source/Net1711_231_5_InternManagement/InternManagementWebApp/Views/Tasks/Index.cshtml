@@ -72,10 +72,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.First().LastUpdated)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Status.StatusId)
-            </th>
-            <th></th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
@@ -108,9 +105,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.LastUpdated)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status.StatusId)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.TaskId">Edit</a> |
@@ -214,10 +208,10 @@
         }
 
         $("#searchForm").submit(function (event) {
-            event.preventDefault(); // Ngăn chặn form submit tự động
+            
 
             var criteriaData = getSearchCriteriaData();
-            console.log("Criteria Data:", criteriaData);
+          
 
             $.ajax({
                 url: '@Url.Action("Search", "Tasks")',
@@ -225,10 +219,14 @@
                 contentType: 'application/json',
                 data: JSON.stringify(criteriaData),
                 success: function (response) {
-                  
+                    if (response.success) {
+                        window.location.href = response.redirectUrl;
+                    } else {
+                        console.error("Error:", response.message);
+                    }
                 },
                 error: function (error) {
-                    console.error("Error:", error);
+                    window.location.href = response.redirectUrl;
                 }
             });
         });

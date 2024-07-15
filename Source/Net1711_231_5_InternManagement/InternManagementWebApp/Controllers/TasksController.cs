@@ -177,7 +177,12 @@ namespace InternManagementWebApp.Controllers
                 return Json(new { status = 0, message = "Failed to update Task: " + ex });
             }
         }
-        public async Task<IActionResult> Index(int pageNumber = 1,string tasks = null)
+        [HttpGet]
+        public IActionResult Search()
+        {
+          return  RedirectToAction("Index");
+        }
+        public async Task<IActionResult> Index(int pageNumber = 1)
         {
             string token = HttpContext.Session.GetString("accessToken");
             if (token == null)
@@ -185,10 +190,15 @@ namespace InternManagementWebApp.Controllers
                 return RedirectToAction("Index", "Home");
             }
             List<Task> takes = new List<Task>();
-            
+            var tasks = HttpContext.Session.GetString("tasks");
             if(tasks == null)
+            {
                 takes = await this.GetAll();
-
+            }
+            else
+            {
+                takes = JsonConvert.DeserializeObject<List<Task>>(tasks);
+            }
             ViewBag.TotalCount = takes.Count;
             ViewBag.pageNumber = pageNumber;
 
@@ -200,8 +210,11 @@ namespace InternManagementWebApp.Controllers
         {
             if (searchCriteria == null || !searchCriteria.Any())
             {
-              
-                return BadRequest("No search criteria provided.");
+                HttpContext.Session.Remove("tasks");
+
+
+                return Json(new { success = true, redirectUrl = Url.Action("Index", "Tasks") });
+
             }
 
 
@@ -267,7 +280,9 @@ namespace InternManagementWebApp.Controllers
                     {
                         if (response.IsSuccessStatusCode)
                         {
-                            return Json(await response.Content.ReadAsStringAsync());
+                            HttpContext.Session.SetString("tasks", await response.Content.ReadAsStringAsync());
+                           
+                            return Json(new { success = true, redirectUrl = Url.Action("Index", "Tasks") });
                            
                         }
                     }
@@ -285,7 +300,6 @@ namespace InternManagementWebApp.Controllers
         }
 
 
-        // GET: Tasks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -302,7 +316,6 @@ namespace InternManagementWebApp.Controllers
             return View(task);
         }
 
-        // GET: Tasks/Create
         public IActionResult Create()
         {
             List<int> statusIds = new List<int> { 1, 2, 3, 4 };
@@ -317,9 +330,6 @@ namespace InternManagementWebApp.Controllers
             return View();
         }
 
-        // POST: Tasks/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         
         public async Task<IActionResult> Create([Bind("TaskId,TaskName,TaskDecription,StartDate,EndDate,Priority,TaskCategory,Comments,DateCreated,LastUpdated,StatusId")] InternManagementData.Models.Task request)
