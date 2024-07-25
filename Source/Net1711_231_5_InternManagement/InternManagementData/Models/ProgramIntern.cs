@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternManagementData.Models;
 
 public partial class ProgramIntern
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ProgramInternId { get; set; }
 
     public int? InternId { get; set; }

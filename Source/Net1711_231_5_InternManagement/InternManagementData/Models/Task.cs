@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternManagementData.Models;
 
 public partial class Task
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int TaskId { get; set; }
 
     public string? TaskName { get; set; }
@@ -16,6 +14,12 @@ public partial class Task
     public DateTime? StartDate { get; set; }
 
     public DateTime? EndDate { get; set; }
+
+    public int? Priority { get; set; }
+    public string? TaskCategory { get; set; }
+    public string? Comments { get; set; }
+    public DateTime? DateCreated { get; set; }
+    public DateTime? LastUpdated { get; set; }
 
     public int? StatusId { get; set; }
 

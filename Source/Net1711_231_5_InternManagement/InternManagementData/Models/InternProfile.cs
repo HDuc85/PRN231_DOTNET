@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternManagementData.Models;
 
 public partial class InternProfile
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int InternId { get; set; }
 
     public string? InternName { get; set; }
@@ -22,6 +20,7 @@ public partial class InternProfile
     public string? Major { get; set; }
 
     public int? MentorId { get; set; }
+
     public string? Password { get; set; }
 
     public virtual MentorProfile? Mentor { get; set; }

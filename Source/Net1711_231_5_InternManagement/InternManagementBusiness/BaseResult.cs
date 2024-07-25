@@ -6,7 +6,13 @@
         public string? Message { get; set; }
         public object? Data { get; set; }
     }
-    public class BaseResult :IInternManagementResult
+    public interface ITaskManagementResult
+    {
+        public int Status { get; set; }
+        public string? Message { get; set; }
+        public object? Data { get; set; }
+    }
+    public class BaseResult :IInternManagementResult, ITaskManagementResult
     {
         public int Status { get; set; }
         public string? Message { get; set; }

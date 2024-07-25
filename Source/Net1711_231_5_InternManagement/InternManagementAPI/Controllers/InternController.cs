@@ -19,7 +19,7 @@ namespace InternManagementWebAPI.Controllers
 
         [HttpGet]
         [Route("GetAll")]
-        [Authorize]
+       // [Authorize]
         public async Task<IActionResult> GetAll()
         {
             var result = await _internBusiness.GetAll();

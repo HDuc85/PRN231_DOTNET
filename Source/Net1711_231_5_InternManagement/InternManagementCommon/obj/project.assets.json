@@ -8,19 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\nguyen.quang.huy\\.nuget\\packages\\": {}
+    "C:\\Users\\HDuc\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
+      "projectUniqueName": "D:\\Project\\Code\\FU\\PRN231\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
       "projectName": "InternManagementCommon",
-      "projectPath": "D:\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
-      "packagesPath": "C:\\Users\\nguyen.quang.huy\\.nuget\\packages\\",
-      "outputPath": "D:\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\obj\\",
+      "projectPath": "D:\\Project\\Code\\FU\\PRN231\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\InternManagementCommon.csproj",
+      "packagesPath": "C:\\Users\\HDuc\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\Code\\FU\\PRN231\\PRN231_K16231InternManagement\\Source\\Net1711_231_5_InternManagement\\InternManagementCommon\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\nguyen.quang.huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HDuc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -41,11 +46,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

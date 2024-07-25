@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -28,6 +29,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="InternProfiles" asp-action="Index">Intern</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tasks" asp-action="Index">Task</a>
+                        </li>
+                        @if (Context.Session.GetString("accessToken") != null)
+                        {
+                            <li class="nav-item" >
+                                <form asp-area="" asp-controller="Home" asp-action="Logout" method="post" class="form-inline">
+                                    <button type="submit" class="btn btn-link nav-link text-dark">Log out</button>
+                                </form>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
