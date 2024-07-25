@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using InternManagementWebAPI.GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,6 +78,7 @@ builder.Services.AddSwaggerGen(option =>
 });
 
 
+builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddFiltering().AddSorting();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -91,6 +93,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.MapGraphQL("/graphql");
 app.MapControllers();
 
 app.Run();

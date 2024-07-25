@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternManagementBusiness", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternManagementWebAPI", "InternManagementAPI\InternManagementWebAPI.csproj", "{9AE8FCF6-9227-437A-B4B1-27D99FAFD3CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternManagementWebApp", "InternManagementWebApp\InternManagementWebApp.csproj", "{F073936E-66A0-4C36-9F93-F3C05C51800E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternManagementCommon", "InternManagementCommon\InternManagementCommon.csproj", "{10FE4D14-0FFB-4D40-8017-7FB21D65E6AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternManagementCommon", "InternManagementCommon\InternManagementCommon.csproj", "{10FE4D14-0FFB-4D40-8017-7FB21D65E6AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{9AE8FCF6-9227-437A-B4B1-27D99FAFD3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AE8FCF6-9227-437A-B4B1-27D99FAFD3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AE8FCF6-9227-437A-B4B1-27D99FAFD3CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F073936E-66A0-4C36-9F93-F3C05C51800E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F073936E-66A0-4C36-9F93-F3C05C51800E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F073936E-66A0-4C36-9F93-F3C05C51800E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F073936E-66A0-4C36-9F93-F3C05C51800E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10FE4D14-0FFB-4D40-8017-7FB21D65E6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10FE4D14-0FFB-4D40-8017-7FB21D65E6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10FE4D14-0FFB-4D40-8017-7FB21D65E6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
