@@ -1,0 +1,13 @@
+.bin
+.obj
+DB/Net1711_231_5_InternManagement.mdf
+DB/Net1711_231_5_InternManagement_log.ldf
+/InternManagementAPI/bin
+/InternManagementAPI/obj
+/InternManagementBusiness/obj
+/InternManagementBusiness/bin
+/InternManagementData/bin
+/InternManagementData/obj
+/InternManagementWebApp/bin
+/InternManagementWebApp/obj
+/Source/Net1711_231_5_InternManagement/.vs
