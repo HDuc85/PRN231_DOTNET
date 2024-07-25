@@ -22,4 +22,8 @@
     <ProjectReference Include="..\InternManagementBusiness\InternManagementBusiness.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\JobboardProfiles\" />
+  </ItemGroup>
+
 </Project>

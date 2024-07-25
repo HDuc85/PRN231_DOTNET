@@ -1,6 +1,7 @@
 using InternManagementData.Models;
 using InternManagementData.Repository;
 using InternManagementData.Repository.Interface;
+using InternManagementWebAPI.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,10 @@ builder.Services.AddDbContext<Net17112315InternManagementContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.RegisterStorageService();
+
+builder.Configuration.SettingsBinding();
+
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -1,14 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\InternManagementCommon\InternManagementCommon.csproj" />
-    <ProjectReference Include="..\InternManagementData\InternManagementData.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Google.Apis.Storage.v1" Version="1.68.0.3463" />
+		<PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\InternManagementCommon\InternManagementCommon.csproj" />
+		<ProjectReference Include="..\InternManagementData\InternManagementData.csproj" />
+	</ItemGroup>
 
 </Project>
